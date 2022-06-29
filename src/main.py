@@ -5,6 +5,22 @@ import soundfile as sf
 
 import note_seq
 
+
+# from huggingface_hub import notebook_login
+#
+# notebook_login()
+
+
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+with open("access_token.pwd", "r") as f:
+    access_token = f.read()
+
+tokenizer = AutoTokenizer.from_pretrained("ai-guru/lakhclean_mmmtrack_4bars_d-2048", use_auth_token=access_token)
+
+model = AutoModelForCausalLM.from_pretrained("ai-guru/lakhclean_mmmtrack_4bars_d-2048", use_auth_token=access_token)
+
+
 # fs = 44100
 # sd.default.samplerate = fs
 # sd.default.channels = 1
