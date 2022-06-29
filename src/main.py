@@ -3,6 +3,8 @@ from audio_to_midi import audio2midi
 import sounddevice as sd
 import soundfile as sf
 
+import note_seq
+
 # fs = 44100
 # sd.default.samplerate = fs
 # sd.default.channels = 1
